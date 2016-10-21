@@ -20,6 +20,15 @@ and open the template in the editor.
         <div class = "top_Bar">
             <h1>BLACK DOT</h1>
         </div>
+        <div class = "top_Bar_Static">
+            <h1>BLACK DOT</h1>
+        </div>
+        
+        <div class = open_on_item_click>
+            
+            <h2>seeee meeeee</h2>
+            
+        </div>
         
         <div class = "image_links_flexed">
 
