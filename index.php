@@ -275,6 +275,8 @@ and open the template in the editor.
             //the data detailing which piece it relates to
             var piece = this.dataset.piece;
             console.log(piece);
+            
+            $(".interior_onCLick").append("<h2>"+piece+"</h2>");
         
         
             $(".open_on_item_click").toggleClass("close");
@@ -289,6 +291,8 @@ and open the template in the editor.
             
             $(".open_on_item_click").toggleClass("close");
             console.log("should be translating");
+            
+            $(".interior_onCLick").empty();
             
         });       
         

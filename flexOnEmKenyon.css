@@ -130,7 +130,7 @@ vimeo box that opens from here on out
     
     z-index: 11;
     
-    
+    color: white;
     
     background-color: rgb(0,0,0); 
     
@@ -145,6 +145,10 @@ vimeo box that opens from here on out
     -o-transform: translateX(-100%);
 }
 
+.interior_onCLick{
+    width:80%;
+    margin: auto;
+}
 
 .Anxiety{background-image: url("images/Anxiety/Anxiety2.jpg")}
 
