@@ -24,9 +24,11 @@ and open the template in the editor.
             <h1>BLACK DOT</h1>
         </div>
         
-        <div class = open_on_item_click>
-            
-            <h2>seeee meeeee</h2>
+        <div class = "open_on_item_click close">
+            <!--the div that contains all the info and will have the video player-->
+            <div class = "interior_onCLick">
+                
+            </div>
             
         </div>
         
@@ -35,7 +37,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item Anxiety">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "Anxiety">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -46,7 +48,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item Brontide">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "Brontide">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -57,7 +59,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item ChangingTheTide">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "ChangingTheTide">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -68,7 +70,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item Echoes">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "Echoes">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -79,7 +81,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item EveryMinute">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "EveryMinute">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -90,7 +92,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item GovernorGary">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "GovernorGary">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -101,7 +103,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item Gyro ">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "Gyro">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -112,7 +114,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item LorenaVera">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "LorenaVera">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -123,7 +125,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item NoRoomForSaints">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "NoRoomForSaints">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -134,7 +136,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item PartyPooper">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "PartyPooper">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -145,7 +147,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item PeoplesCoffee">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "PeoplesCoffee">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -156,18 +158,18 @@ and open the template in the editor.
 
             <div class = "link_flex_item TellMeYouLoveMe">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "TellMeYouLoveMe">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
-  <div class = "title_text">
+                <div class = "title_text">
                         <h2>TELL ME YOU LOVE ME</h2>
-                    </div>
+                </div>
             </div>
 
             <div class = "link_flex_item TheTenderGrace">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "TheTenderGrace">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -178,7 +180,7 @@ and open the template in the editor.
 
             <div class = "link_flex_item YoureAWizard">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem">
+                <div class = "Black_overlay_flexItem" data-piece = "YoureAWizard">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
@@ -261,6 +263,34 @@ and open the template in the editor.
                 }
             }
     });
+        
+        </script>
+        
+        <!--script for opening vimeo viewing box-->
+        <script>
+        //when they click on the flex item it needs to open and retrieve the data
+        // in order to populate the pop up with the right details
+        $(".Black_overlay_flexItem").click(function(){
+            
+            //the data detailing which piece it relates to
+            var piece = this.dataset.piece;
+            console.log(piece);
+        
+        
+            $(".open_on_item_click").toggleClass("close");
+            
+            console.log("should be translating");
+            
+        });       
+        
+        
+        //when they click the overlay it needs to hide
+        $(".open_on_item_click").click(function(){
+            
+            $(".open_on_item_click").toggleClass("close");
+            console.log("should be translating");
+            
+        });       
         
         </script>
     </body>
