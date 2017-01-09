@@ -24,83 +24,17 @@ and open the template in the editor.
             <h1>BLACK DOT</h1>
         </div>
         
-        <div class = "open_on_item_click close">
-            <!--the div that contains all the info and will have the video player-->
+        <!--<div class = "open_on_item_click close">
+            the div that contains all the info and will have the video player
             <div class = "interior_onCLick">
                 
             </div>
             
-        </div>
+        </div>-->
         
         <div class = "image_links_flexed">
 
-
-            <div class = "link_flex_item Anxiety">
-                <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "Anxiety">
-                    <!--the black overlay inside the flex item that switches transparency on hover-->
-                    
-                </div>
-                <div class = "title_text">
-                        <h2>ANXIETY</h2>
-                    </div>
-            </div>
-
-            <div class = "link_flex_item Brontide">
-                <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "Brontide">
-                    <!--the black overlay inside the flex item that switches transparency on hover-->
-                    
-                </div>
-                <div class = "title_text">
-                        <h2>BRONTIDE</h2>
-                    </div>
-            </div>
-
-            <div class = "link_flex_item ChangingTheTide">
-                <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "ChangingTheTide">
-                    <!--the black overlay inside the flex item that switches transparency on hover-->
-                    
-                </div>
-                <div class = "title_text">
-                        <h2>CHANGING THE TIDE</h2>
-                    </div>
-            </div>
-
-            <div class = "link_flex_item Echoes">
-                <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "Echoes">
-                    <!--the black overlay inside the flex item that switches transparency on hover-->
-                    
-                </div>
-                <div class = "title_text">
-                        <h2>ECHOES</h2>
-                    </div>
-            </div>
-
-            <div class = "link_flex_item EveryMinute">
-                <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "EveryMinute">
-                    <!--the black overlay inside the flex item that switches transparency on hover-->
-                    
-                </div>
-                <div class = "title_text">
-                        <h2>EVERY MINUTE</h2>
-                    </div>
-            </div>
-
-            <div class = "link_flex_item GovernorGary">
-                <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "GovernorGary">
-                    <!--the black overlay inside the flex item that switches transparency on hover-->
-                    
-                </div>
-                <div class = "title_text">
-                        <h2>GOVERNOR GARY</h2>
-                    </div>
-            </div>
-
+            
             <div class = "link_flex_item Gyro ">
                 <!--different image in each of these as background-->
                 <div class = "Black_overlay_flexItem" data-piece = "Gyro">
@@ -109,21 +43,25 @@ and open the template in the editor.
                 </div>
                 <div class = "title_text">
                         <h2>GYRO</h2>
-                    </div>
+                        <P>video game score</P>
+                        <p class = "big_dot">.</p>
+                </div>
             </div>
 
-            <div class = "link_flex_item LorenaVera">
+            <div class = "link_flex_item Anxiety"> <!--Also known as Depictions!-->
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "LorenaVera">
+                <div class = "Black_overlay_flexItem" data-piece = "Anxiety">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
                 <div class = "title_text">
-                        <h2>LORENA VERA</h2>
+                        <h2>ANXIETY</h2>
+                        <P>depictions of mental illness</P>
+                        <p class = "big_dot">.</p>
                     </div>
             </div>
 
-            <div class = "link_flex_item NoRoomForSaints">
+               <div class = "link_flex_item NoRoomForSaints">
                 <!--different image in each of these as background-->
                 <div class = "Black_overlay_flexItem" data-piece = "NoRoomForSaints">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
@@ -131,64 +69,56 @@ and open the template in the editor.
                 </div>
                 <div class = "title_text">
                         <h2>NO ROOM FOR SAINTS</h2>
+                        <P>feature film</P>
+                        <p class = "big_dot">.</p>
                     </div>
             </div>
 
-            <div class = "link_flex_item PartyPooper">
+            <div class = "link_flex_item OpalHouse">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "PartyPooper">
+                <div class = "Black_overlay_flexItem" data-piece = "OpalHouse">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
                 <div class = "title_text">
-                        <h2>PARTY POOPER</h2>
+                        <h2>OPAL HOUSE</h2>
+                        <P>indie-pop</P>
+                        <p class = "big_dot">.</p>
                     </div>
             </div>
-
-            <div class = "link_flex_item PeoplesCoffee">
+            
+            <div class = "link_flex_item ShortFilms">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "PeoplesCoffee">
+                <div class = "Black_overlay_flexItem" data-piece = "ShortFilms">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
                 <div class = "title_text">
-                        <h2>PEOPLE'S COFFEE</h2>
+                        <h2>SHORT FILMS</h2>
+                        <P>collection of scores</P>
+                        <p class = "big_dot">.</p>
                     </div>
             </div>
-
-            <div class = "link_flex_item TellMeYouLoveMe">
+            
+            <div class = "link_flex_item Misc">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "TellMeYouLoveMe">
+                <div class = "Black_overlay_flexItem" data-piece = "Misc">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
                 <div class = "title_text">
-                        <h2>TELL ME YOU LOVE ME</h2>
-                </div>
-            </div>
-
-            <div class = "link_flex_item TheTenderGrace">
-                <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "TheTenderGrace">
-                    <!--the black overlay inside the flex item that switches transparency on hover-->
-                    
-                </div>
-                <div class = "title_text">
-                        <h2>THE TENDER GRACE</h2>
+                        <h2>MISCELLANEOUS</h2>
+                        <P>collection of projects</P>
+                        <p class = "big_dot">.</p>
                     </div>
             </div>
-
-            <div class = "link_flex_item YoureAWizard">
-                <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "YoureAWizard">
-                    <!--the black overlay inside the flex item that switches transparency on hover-->
-                    
-                </div>
-                <div class = "title_text">
-                        <h2>YOU'RE A WIZARD</h2>
-                    </div>
+            
+            <div class = "White_Transition">
+                
+                <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>dhdaslkfhgalsfhasd</p>
+                
             </div>
-
+ 
         </div>
 
         <!--gonna need script to ensure flexed images always take up whole page-->
@@ -268,33 +198,22 @@ and open the template in the editor.
         
         <!--script for opening vimeo viewing box-->
         <script>
-        //when they click on the flex item it needs to open and retrieve the data
-        // in order to populate the pop up with the right details
+      //when they click on the flex item it needs to open the overlay "white_transition" and switch its class to "transitioning"
         $(".Black_overlay_flexItem").click(function(){
             
-            //the data detailing which piece it relates to
-            var piece = this.dataset.piece;
-            console.log(piece);
-            
-            $(".interior_onCLick").append("<h2>"+piece+"</h2>");
+            console.log("clicked");
         
-        
-            $(".open_on_item_click").toggleClass("close");
-            
-            console.log("should be translating");
+            $(".White_Transition").toggleClass("transitioning");
             
         });       
         
+        $(".White_Transition").click(function(){
+            
+            console.log("clicked");
         
-        //when they click the overlay it needs to hide
-        $(".open_on_item_click").click(function(){
+            $(".White_Transition").toggleClass("transitioning");
             
-            $(".open_on_item_click").toggleClass("close");
-            console.log("should be translating");
-            
-            $(".interior_onCLick").empty();
-            
-        });       
+        });  
         
         </script>
     </body>
