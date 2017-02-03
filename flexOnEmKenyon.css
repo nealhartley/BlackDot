@@ -7,6 +7,19 @@ and open the template in the editor.
     Created on : 8/10/2016, 10:53:28 AM
     Author     : Neal
 */
+
+
+/*
+Z-INDEXES
+
+    top_Bar - z-index: 15;
+    audio_bar - z-index: 15;
+    Black_overlay_flexItem - z-index: 8;
+    title_text - z-index: 11;
+    transitioning - z-index: 12;
+
+*/
+
 body{
     margin: 0;
     background-color: rgb(0,0,0); 
@@ -30,7 +43,7 @@ body{
     
     color: rgb(255,255,255);
     background-color: rgb(0,0,0);
-    z-index: 10;
+    z-index: 15;
 }
 
 .top_Bar_Static{
@@ -111,34 +124,32 @@ header{
     padding-top: 14em;
 }
 
-.transitioning{
-       transition: opacity 2s;
-        -webkit-transition: opacity 2s;
-        -moz-transition: opacity 2s;
-    
-        position: absolute;
+.White_Transition{
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         padding-bottom: 100%;
-        visibility: visible;
-        
-        z-index: 9;
+        visibility: hidden;
+        opacity: 0;
         background-color: white;
-
         
+        transition: visiblity 0s 1s, opacity 1s linear;
+        -webkit-transition: visiblity 0s 1s, opacity 1s linear;
+        -moz-transition: visiblity 0s 1s, opacity 1s linear;
 }
 
-/*.White_Transition{
+.transitioning{
+        visibility: visible;
+        opacity: 1;
+        z-index: 12;
+        
         transition: visiblity 0s 2s, opacity 2s linear;
         -webkit-transition: visiblity 0s 2s, opacity 2s linear;
         -moz-transition: visiblity 0s 2s, opacity 2s linear;
-    
-        visibility: hidden;
-        opacity: 0;
-        
-    
-}*/
+}
+
+/*Audio file pop up*/
 
 
 
@@ -188,6 +199,24 @@ vimeo box that opens from here on out
 .interior_onCLick{
     width:80%;
     margin: auto;
+}
+
+.audio_bottom_bar{
+    position: fixed;
+    width: 100%;
+    padding-bottom: 10%;
+    left: 0;
+    top: 90%;
+    
+    
+    z-index: 15;
+}
+#audio_player{
+    position: static;
+    margin-left: 30%;
+    width: 40%;
+    
+    
 }
 
 .Anxiety{background-image: url("images/Anxiety/Anxiety2.jpg")}

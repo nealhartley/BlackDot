@@ -120,6 +120,16 @@ and open the template in the editor.
             </div>
  
         </div>
+        
+        <div class = audio_bottom_bar>
+            
+            <audio controls="controls" id="audio_player">
+                <source src="track.ogg" type="audio/ogg" />
+                <source src="audio/Sleep_Away.mp3" type="audio/mpeg" />
+                 Your browser does not support the audio element.
+            </audio>
+            
+        </div>
 
         <!--gonna need script to ensure flexed images always take up whole page-->
         <!--will need to be dependant on screen size/ratio how big i want them-->
@@ -169,30 +179,76 @@ and open the template in the editor.
         
         <script>//script for doing mouse scroll in order to hide top help bar
             
+            
             var top_bar_open = true;
             
-        $( window ).bind('mousewheel DOMMouseScroll' , function(event){
-        //if they scroll up
-        
-        //if they scroll up we need to show top bar
-            if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                //up
-                
-                if(top_bar_open === false){
-                    $(".top_Bar").slideToggle();
-                    top_bar_open = true;
+            $( window ).bind('mousewheel DOMMouseScroll' , function(event){
+            //if they scroll up
+
+            //if they scroll up we need to show top bar
+                if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                    //up
+
+                    if(top_bar_open === false){
+                        $(".top_Bar").slideToggle();
+                        top_bar_open = true;
+                    }
                 }
-            }
-        
-        //if they scroll down. we hide the tool bar at top of page.
-            else {
-                //down
-                if(top_bar_open === true){
-                    $(".top_Bar").slideToggle();
-                    top_bar_open = false
+
+            //if they scroll down. we hide the tool bar at top of page.
+                else {
+                    //down
+                    if(top_bar_open === true){
+                        $(".top_Bar").slideToggle();
+                        top_bar_open = false
+                    }
                 }
-            }
-    });
+            });
+        
+        
+        </script>
+        
+        <!--This is the script that scrolls to each div when on phone-->
+        <script>
+        
+        var scrollPos = 0; //this is which div the scroll is currently positioned at.
+        var distToScroll = $(".link_flex_item").height();
+        console.log("dis to scroll: " + distToScroll);
+        
+        
+        var active = true;
+        if(active === true){
+        
+            $( window ).bind('mousewheel DOMMouseScroll' , function(event){
+                //we need to scroll to the top of next flex item with each scroll
+                console.log("NO EVENT pos is: "+ scrollPos)
+                if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                    //up
+                   scrollPos = scrollPos - 1;//scrollPos needs ot have 1 subtracted from it
+                   if(scrollPos <= 0){scrollPos = 0;}
+
+                   console.log("scrolled UP and new pos is: "+ scrollPos)
+
+                   $(document).scrollTop(distToScroll * scrollPos);//set scroll to new position
+
+                }
+                else{
+                    //down
+                    scrollPos = scrollPos + 1;//scrollPos needs to have 1 added to it;
+
+                    console.log("scrolled DOWN and new pos is: "+ scrollPos)
+                    if(scrollPos >= 4){scrollPos = 0;}
+
+
+
+                    $(document).scrollTop(distToScroll * scrollPos);//set scroll to new position
+                }
+
+
+
+            });
+        
+        }
         
         </script>
         
