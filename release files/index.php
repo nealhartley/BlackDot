@@ -12,9 +12,7 @@ and open the template in the editor.
         <link type="text/css" rel="stylesheet" href="flexOnEmKenyon.css">
         <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet"> 
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
         
         <title></title>
     </head>
@@ -215,135 +213,10 @@ and open the template in the editor.
         
         </script>
         
-        <!--This is the script that scrolls to each div when on phone-->
+        
+        <!--script for audio-->
         <script>
-        
-        var scrollPos = 0; //this is which div the scroll is currently positioned at.
-        var distToScroll = $(".link_flex_item").height();
-        console.log("dis to scroll: " + distToScroll);
-        
-        
-        var scroll_snap_active = false; //this is for a later release potentially. <-----hawly shit this is hard
-        
-        if(scroll_snap_active === true){
-        console.log("can scroll: dev mdoe enabled");
-            //intial timer states
-            
-            var current_time = new Date();
-            console.log(current_time);
-            
-            var time_since_scroll = current_time.valueOf()/1000; //should give us current time in milliseconds
-            var timer_between_scrolls = time_since_scroll; //should then be current time plus 2 seconds = initial state.
-            
-           console.log("time since: " + time_since_scroll + " time between: " + timer_between_scrolls);
-           
-            
-        
-                timer_between_scrolls = time_since_scroll; //reset it to 0 so wont be fired again
-        
-                $( window ).bind('mousewheel DOMMouseScroll' , function(event){
-                    //we need to stop defaults
-                    event.preventDefault();
-                    event.stopPropagation();
-                    
-                    
-                    //we need to scroll to the top of next flex item with each scroll
-                    console.log("NO EVENT pos is: "+ scrollPos);
-                    
-                    if(canScroll( time_since_scroll, timer_between_scrolls )){
-                        
-                        current_time = new Date();
-                        
-                        time_since_scroll = current_time.valueOf()/1000;
-                        timer_between_scrolls = time_since_scroll + 1;
-                    
-                        if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                            //up
-
-                                scrollPos = scrollPos - 1;//scrollPos needs ot have 1 subtracted from it
-                                if(scrollPos <= 0){scrollPos = 0;}
-
-                                console.log("scrolled UP and new pos is: "+ scrollPos);
-
-                                $(document).scrollTop(distToScroll * scrollPos);//set scroll to new position
-                              
-                        }
-                        else{
-                            //down
-                                scrollPos = scrollPos + 1;//scrollPos needs to have 1 added to it;
-
-                                console.log("scrolled DOWN and new pos is: "+ scrollPos);
-                                if(scrollPos >= 4){scrollPos = 0;}
-
-                                $(document).scrollTop(distToScroll * scrollPos);//set scroll to new position
-                        }
-                    }
-                    
-                    else{
-                        current_time = new Date();
-                        time_since_scroll = current_time.valueOf()/1000;
-                    }
-
-                });
-            
-                        
-            
-        }
-        
-        function canScroll( current_time, time_can_snap ){
-                
-            if(current_time < time_can_snap){
-              
-                console.log("we can not scroll at the mo. current_time: " + current_time + " time_can_snap: " + time_can_snap);
-                                
-                return false;
-            }
-                   
-            console.log("we CAN scroll at the mo. current_time: " + current_time + " time_can_snap: " + time_can_snap);
-            return true;
-        }
-        
-        </script>
-        
-        <!--script for touch swipe up and down function-->
-        <script>
-            var position = 0; //position that the page is currently on - for mobile this can be 0-5 1 for each element
-            var height_of_each_component = $("window").height();
-            
-            $("window").on("scrollstop", function(event){
-                
-                var scrollTop = document.documentElement.scrollTop;
-                console.log("scrollTop: " + scrollTop);
-                               
-                
-            });
-            
-        </script>
-        
-        <!--script for opening vimeo viewing box-->
-        <script>
-            
-         var active = false;
-         
-         if(active === true){//for this release we need to turn this off
-      //when they click on the flex item it needs to open the overlay "white_transition" and switch its class to "transitioning"
-            $(".Black_overlay_flexItem").click(function(){
-
-                console.log("clicked");
-
-                $(".White_Transition").toggleClass("transitioning");
-
-            });       
-
-            $(".White_Transition").click(function(){
-
-                console.log("clicked");
-
-                $(".White_Transition").toggleClass("transitioning");
-
-            });  
-         }
-         
+                     
          //from here we are going to do the script for changing audio files.
          //audio filename format is going to be the data tag from each div follows by .mp3
          
