@@ -61,15 +61,15 @@ and open the template in the editor.
                     </div>
             </div>
 
-               <div class = "link_flex_item NoRoomForSaints">
+             <div class = "link_flex_item ShortFilms">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "NoRoomForSaints">
+                <div class = "Black_overlay_flexItem" data-piece = "ShortFilms">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
                 <div class = "title_text">
-                        <h2>NO ROOM FOR SAINTS</h2>
-                        <P>feature film</P>
+                        <h2>SHORT FILMS</h2>
+                        <P>collection of scores</P>
                         <p class = "big_dot">.</p>
                     </div>
             </div>
@@ -87,18 +87,21 @@ and open the template in the editor.
                     </div>
             </div>
             
-            <div class = "link_flex_item ShortFilms">
+            
+              <div class = "link_flex_item NoRoomForSaints">
                 <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "ShortFilms">
+                <div class = "Black_overlay_flexItem" data-piece = "NoRoomForSaints">
                     <!--the black overlay inside the flex item that switches transparency on hover-->
                     
                 </div>
                 <div class = "title_text">
-                        <h2>SHORT FILMS</h2>
-                        <P>collection of scores</P>
+                        <h2>NO ROOM FOR SAINTS</h2>
+                        <P>feature film</P>
                         <p class = "big_dot">.</p>
                     </div>
             </div>
+            
+            
             
             <div class = "link_flex_item Misc">
                 <!--different image in each of these as background-->
@@ -124,7 +127,6 @@ and open the template in the editor.
         <div class = audio_bottom_bar>
             
             <audio controls="controls" id="audio_player">
-                <source src="track.ogg" type="audio/ogg" />
                 <source src="audio/Sleep_Away.mp3" type="audio/mpeg" />
                  Your browser does not support the audio element.
             </audio>
@@ -216,7 +218,7 @@ and open the template in the editor.
         console.log("dis to scroll: " + distToScroll);
         
         
-        var active = true;
+        var active = false; //this is for a later release potentially.
         if(active === true){
         
             $( window ).bind('mousewheel DOMMouseScroll' , function(event){
@@ -254,23 +256,44 @@ and open the template in the editor.
         
         <!--script for opening vimeo viewing box-->
         <script>
+            
+         var active = false;
+         
+         if(active === true){//for this release we need to turn this off
       //when they click on the flex item it needs to open the overlay "white_transition" and switch its class to "transitioning"
-        $(".Black_overlay_flexItem").click(function(){
-            
-            console.log("clicked");
-        
-            $(".White_Transition").toggleClass("transitioning");
-            
-        });       
-        
-        $(".White_Transition").click(function(){
-            
-            console.log("clicked");
-        
-            $(".White_Transition").toggleClass("transitioning");
-            
-        });  
-        
+            $(".Black_overlay_flexItem").click(function(){
+
+                console.log("clicked");
+
+                $(".White_Transition").toggleClass("transitioning");
+
+            });       
+
+            $(".White_Transition").click(function(){
+
+                console.log("clicked");
+
+                $(".White_Transition").toggleClass("transitioning");
+
+            });  
+         }
+         
+         //from here we are going to do the script for changing audio files.
+         //audio filename format is going to be the data tag from each div follows by .mp3
+         
+         $(".Black_overlay_flexItem").click(function(){
+             
+                var overlay_data = $(this).data('piece')
+
+                console.log( "audio/" + overlay_data + ".mp3");
+                
+                var audio = document.getElementById('audio_player');
+                audio.src = "audio/" + overlay_data + ".mp3";
+                audio.load();
+                audio.play();
+            });   
+         
+         
         </script>
     </body>
 </html>
