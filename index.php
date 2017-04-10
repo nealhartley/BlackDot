@@ -211,13 +211,44 @@ and open the template in the editor.
                         //down
                         if(top_bar_open === true){
                             $(".top_Bar").slideToggle();
-                            top_bar_open = false
+                            top_bar_open = false;
                         }
                     }
-                }
-            });
+                
+                });
         
+            }
         
+        </script>
+        
+            
+        
+        <script>//script for scrolling left and right inside the flexbox
+            
+            $( window ).bind('mousewheel DOMMouseScroll' , function(event){
+                //if they scroll up
+
+                //if they scroll up we need to show top bar
+                    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                        //up
+                        $(".image_links_flexed").animate({'margin-left' : '+=100px'}, 10);
+                        
+                        //need to add some sort of limiter
+                        //also need to work out dist of each elem and animate scroll to that
+                        
+                    }
+
+                //if they scroll down. we hide the tool bar at top of page.
+                    else {
+                        //down
+                        $(".image_links_flexed").animate({'margin-left' : '-=100px'}, 10);
+                        
+                        //need to add some sort of limiter
+                        //also need to work out dist of each elem and animate scroll to that
+                    }
+                
+                });
+
         </script>
         
         <!--This is the script that scrolls to each div when on phone-->

@@ -25,7 +25,7 @@ body{
     background-color: rgb(0,0,0); 
     font-family: 'Cabin Sketch', cursive;
     letter-spacing: 0.5em;
-    overflow: auto;
+    
 }
 
 
@@ -53,6 +53,7 @@ body{
 .image_links_flexed{
     display: flex;
     flex-wrap: wrap;
+    width: 300%;
     
     
 }
@@ -65,7 +66,7 @@ body{
 @media screen and (min-width: 501px){
 
         .link_flex_item{
-            min-width: 50%;
+            min-width: calc(100%/6);
 
             flex-grow: 1;
             position: relative;
