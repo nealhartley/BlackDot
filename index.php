@@ -187,27 +187,32 @@ and open the template in the editor.
         <script>//script for doing mouse scroll in order to hide top help bar
             
             
-            var top_bar_open = true;
+            var turnOn = false;
             
-            $( window ).bind('mousewheel DOMMouseScroll' , function(event){
-            //if they scroll up
+            if(turnOn){
+            
+                var top_bar_open = true;
 
-            //if they scroll up we need to show top bar
-                if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                    //up
+                $( window ).bind('mousewheel DOMMouseScroll' , function(event){
+                //if they scroll up
 
-                    if(top_bar_open === false){
-                        $(".top_Bar").slideToggle();
-                        top_bar_open = true;
+                //if they scroll up we need to show top bar
+                    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                        //up
+
+                        if(top_bar_open === false){
+                            $(".top_Bar").slideToggle();
+                            top_bar_open = true;
+                        }
                     }
-                }
 
-            //if they scroll down. we hide the tool bar at top of page.
-                else {
-                    //down
-                    if(top_bar_open === true){
-                        $(".top_Bar").slideToggle();
-                        top_bar_open = false
+                //if they scroll down. we hide the tool bar at top of page.
+                    else {
+                        //down
+                        if(top_bar_open === true){
+                            $(".top_Bar").slideToggle();
+                            top_bar_open = false
+                        }
                     }
                 }
             });
@@ -349,13 +354,14 @@ and open the template in the editor.
          
          $(".Black_overlay_flexItem").click(function(){
              
-                var overlay_data = $(this).data('piece')
+                var overlay_data = $(this).data('piece');
 
                 console.log( "audio/" + overlay_data + ".mp3");
                 
                 var audio = document.getElementById('audio_player');
                 audio.src = "audio/" + overlay_data + ".mp3";
                 audio.load();
+                audio.play();
                 
                 $(".song_title").empty();
                 $(".song_title").append("<p>" + overlay_data + "</p>");
