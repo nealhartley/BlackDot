@@ -20,23 +20,22 @@ and open the template in the editor.
     </head>
     <body>
         
-        <div class = "top_Bar">
-            <h1>BLACK DOT</h1>
-        </div>
-        <div class = "top_Bar_Static">
-            <h1>BLACK DOT</h1>
-        </div>
         
-        <!--<div class = "open_on_item_click close">
-            the div that contains all the info and will have the video player
-            <div class = "interior_onCLick">
-                
-            </div>
-            
-        </div>-->
         
         <div class = "image_links_flexed">
 
+            <div class = "Introduction">
+                <!--different image in each of these as background-->
+                <div class = "Black_overlay_flexItem" data-piece = "Introduction">
+                    <!--the black overlay inside the flex item that switches transparency on hover-->
+                    
+                </div>
+                <div class = "title_text">
+                        <h2>Hi!, I am Kenyon</h2>
+                        <P>I make music</P>
+                        <p class = "big_dot">.</p>
+                </div>
+            </div>            
             
             <div class = "link_flex_item Gyro ">
                 <!--different image in each of these as background-->
@@ -184,202 +183,84 @@ and open the template in the editor.
 
         </script>
         
-        <script>//script for doing mouse scroll in order to hide top help bar
-            
-            
-            var turnOn = false;
-            
-            if(turnOn){
-            
-                var top_bar_open = true;
-
-                $( window ).bind('mousewheel DOMMouseScroll' , function(event){
-                //if they scroll up
-
-                //if they scroll up we need to show top bar
-                    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                        //up
-
-                        if(top_bar_open === false){
-                            $(".top_Bar").slideToggle();
-                            top_bar_open = true;
-                        }
-                    }
-
-                //if they scroll down. we hide the tool bar at top of page.
-                    else {
-                        //down
-                        if(top_bar_open === true){
-                            $(".top_Bar").slideToggle();
-                            top_bar_open = false;
-                        }
-                    }
-                
-                });
         
-            }
-        
-        </script>
-        
-            
         
         <script>//script for scrolling left and right inside the flexbox
             
+            var canScroll = true;
+            
             $( window ).bind('mousewheel DOMMouseScroll' , function(event){
-                //if they scroll up
-
-                //if they scroll up we need to show top bar
+                
+               console.log("can scroll = " + canScroll);
+                
+                //if they scroll up we need to scroll left
                     if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
                         //up
-                        $(".image_links_flexed").animate({'margin-left' : '+=100px'}, 10);
-                        
-                        //need to add some sort of limiter
-                        //also need to work out dist of each elem and animate scroll to that
+                       
+                       var marginLeft = $(".image_links_flexed").css("margin-left");
+                       
+                       marginLeftInt = parseInt(marginLeft);
+                       
+                       //make sure there is room left to scroll.
+                       if(marginLeftInt + 100 <= 0 && canScroll){
+                           //make it so they cant induce scriolling until this is done
+                           canScroll = false;
+                           //scroll
+                            $(".image_links_flexed").animate({'margin-left' : '+=100px'}, 10, 'swing', canScrollAgain(canScroll));
+                            
+                        }
                         
                     }
 
-                //if they scroll down. we hide the tool bar at top of page.
+                //if they scroll down we need to scroll right.
                     else {
                         //down
-                        $(".image_links_flexed").animate({'margin-left' : '-=100px'}, 10);
                         
+                        var imagesWidth = $(".image_links_flexed").width();
+                        
+                        console.log(imagesWidth);
+                        
+                        //we want to check scroll position.
+                                             
+                        var marginLeft = $(".image_links_flexed").css("margin-left");
+                        console.log("margin left" + marginLeft);
+                                              
+                        console.log("screen width" + $(window).width());
+                        var screenWidth = $(window).width();
+                        
+                        //we need to combine screenwidth and imageswidth in order to make a string that will be comparable 
+                        //with marginLeft
+                        
+                        var combinedWidthsInt = (screenWidth - imagesWidth); 
+                        console.log("combinedWidth " + combinedWidthsInt);
+                        
+                        var marginLeftInt = parseInt(marginLeft);
+                        
+                        
+                        if(marginLeftInt - 100 >= combinedWidthsInt && canScroll){
+                        
+                            //make it so they cant induce scriolling until this is done
+                            canScroll = false;
+                            //scroll
+                            $(".image_links_flexed").animate({'margin-left' : '-=100px'}, 10, 'swing', canScrollAgain(canScroll));
+                         
+                            
+                        }
                         //need to add some sort of limiter
                         //also need to work out dist of each elem and animate scroll to that
                     }
                 
                 });
+                
+                function canScrollAgain(canScroll){
+                    canScroll = true;
+                    console.log("can scroll again");
+                }
 
         </script>
         
-        <!--This is the script that scrolls to each div when on phone-->
+        
         <script>
-        
-        var scrollPos = 0; //this is which div the scroll is currently positioned at.
-        var distToScroll = $(".link_flex_item").height();
-        console.log("dis to scroll: " + distToScroll);
-        
-        
-        var scroll_snap_active = false; //this is for a later release potentially. <-----hawly shit this is hard
-        
-        if(scroll_snap_active === true){
-        console.log("can scroll: dev mdoe enabled");
-            //intial timer states
-            
-            var current_time = new Date();
-            console.log(current_time);
-            
-            var time_since_scroll = current_time.valueOf()/1000; //should give us current time in milliseconds
-            var timer_between_scrolls = time_since_scroll; //should then be current time plus 2 seconds = initial state.
-            
-           console.log("time since: " + time_since_scroll + " time between: " + timer_between_scrolls);
-           
-            
-        
-                timer_between_scrolls = time_since_scroll; //reset it to 0 so wont be fired again
-        
-                $( window ).bind('mousewheel DOMMouseScroll' , function(event){
-                    //we need to stop defaults
-                    event.preventDefault();
-                    event.stopPropagation();
-                    
-                    
-                    //we need to scroll to the top of next flex item with each scroll
-                    console.log("NO EVENT pos is: "+ scrollPos);
-                    
-                    if(canScroll( time_since_scroll, timer_between_scrolls )){
-                        
-                        current_time = new Date();
-                        
-                        time_since_scroll = current_time.valueOf()/1000;
-                        timer_between_scrolls = time_since_scroll + 1;
-                    
-                        if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                            //up
-
-                                scrollPos = scrollPos - 1;//scrollPos needs ot have 1 subtracted from it
-                                if(scrollPos <= 0){scrollPos = 0;}
-
-                                console.log("scrolled UP and new pos is: "+ scrollPos);
-
-                                $(document).scrollTop(distToScroll * scrollPos);//set scroll to new position
-                              
-                        }
-                        else{
-                            //down
-                                scrollPos = scrollPos + 1;//scrollPos needs to have 1 added to it;
-
-                                console.log("scrolled DOWN and new pos is: "+ scrollPos);
-                                if(scrollPos >= 4){scrollPos = 0;}
-
-                                $(document).scrollTop(distToScroll * scrollPos);//set scroll to new position
-                        }
-                    }
-                    
-                    else{
-                        current_time = new Date();
-                        time_since_scroll = current_time.valueOf()/1000;
-                    }
-
-                });
-            
-                        
-            
-        }
-        
-        function canScroll( current_time, time_can_snap ){
-                
-            if(current_time < time_can_snap){
-              
-                console.log("we can not scroll at the mo. current_time: " + current_time + " time_can_snap: " + time_can_snap);
-                                
-                return false;
-            }
-                   
-            console.log("we CAN scroll at the mo. current_time: " + current_time + " time_can_snap: " + time_can_snap);
-            return true;
-        }
-        
-        </script>
-        
-        <!--script for touch swipe up and down function-->
-        <script>
-            var position = 0; //position that the page is currently on - for mobile this can be 0-5 1 for each element
-            var height_of_each_component = $("window").height();
-            
-            $("window").on("scrollstop", function(event){
-                
-                var scrollTop = document.documentElement.scrollTop;
-                console.log("scrollTop: " + scrollTop);
-                               
-                
-            });
-            
-        </script>
-        
-        <!--script for opening vimeo viewing box-->
-        <script>
-            
-         var active = false;
-         
-         if(active === true){//for this release we need to turn this off
-      //when they click on the flex item it needs to open the overlay "white_transition" and switch its class to "transitioning"
-            $(".Black_overlay_flexItem").click(function(){
-
-                console.log("clicked");
-
-                $(".White_Transition").toggleClass("transitioning");
-
-            });       
-
-            $(".White_Transition").click(function(){
-
-                console.log("clicked");
-
-                $(".White_Transition").toggleClass("transitioning");
-
-            });  
-         }
-         
          //from here we are going to do the script for changing audio files.
          //audio filename format is going to be the data tag from each div follows by .mp3
          
@@ -396,12 +277,8 @@ and open the template in the editor.
                 
                 $(".song_title").empty();
                 $(".song_title").append("<p>" + overlay_data + "</p>");
-                    
-                
-                
-                
-                
-            });   
+        
+        });   
          
          
         </script>
