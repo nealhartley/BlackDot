@@ -20,9 +20,23 @@ and open the template in the editor.
     </head>
     <body>
         
-        
+ 
         
         <div class = "image_links_flexed">
+            <div class = "link_flex_item Kenyon_one ">
+            </div>
+        
+            <div class = "link_flex_item Kenyon_two ">
+                
+                <h3>Kenyon the Shank-Meister</h3>
+                
+                <h2>.</h2>
+                
+                <p>kenyonshankie@gmail.com</p>
+                
+                <p>Scroll to view my work ></p>
+                
+            </div>            
 
             <div class = "Introduction">
                 <!--different image in each of these as background-->
@@ -136,6 +150,9 @@ and open the template in the editor.
             </audio>
             
         </div>
+        
+        <!--lets make a div thats gonna sit behind everything and remain black the whole time-->
+        <div class = "black_backer"></div>
 
         <!--gonna need script to ensure flexed images always take up whole page-->
         <!--will need to be dependant on screen size/ratio how big i want them-->
@@ -186,7 +203,7 @@ and open the template in the editor.
         
         
         <script>//script for scrolling left and right inside the flexbox
-            
+            var screenWidth = $(window).width();
             var canScroll = true;
             
             $( window ).bind('mousewheel DOMMouseScroll' , function(event){
@@ -202,11 +219,15 @@ and open the template in the editor.
                        marginLeftInt = parseInt(marginLeft);
                        
                        //make sure there is room left to scroll.
-                       if(marginLeftInt + 100 <= 0 && canScroll){
+                       if(marginLeftInt + screenWidth/2 <= 0 /*&& canScroll*/&& !$(".image_links_flexed").is(':animated')){
                            //make it so they cant induce scriolling until this is done
+                           
+                           console.log("canScroll current status: " + canScroll);
                            canScroll = false;
+                            console.log("canScroll should be false: " + canScroll);
                            //scroll
-                            $(".image_links_flexed").animate({'margin-left' : '+=100px'}, 10, 'swing', canScrollAgain(canScroll));
+                            $(".image_links_flexed").animate({'margin-left' : '+='+screenWidth/2}, 500,
+                            'swing', $(".image_links_flexed").stop(true, true));
                             
                         }
                         
@@ -226,7 +247,7 @@ and open the template in the editor.
                         console.log("margin left" + marginLeft);
                                               
                         console.log("screen width" + $(window).width());
-                        var screenWidth = $(window).width();
+                        
                         
                         //we need to combine screenwidth and imageswidth in order to make a string that will be comparable 
                         //with marginLeft
@@ -237,12 +258,13 @@ and open the template in the editor.
                         var marginLeftInt = parseInt(marginLeft);
                         
                         
-                        if(marginLeftInt - 100 >= combinedWidthsInt && canScroll){
+                        if(marginLeftInt - 100 >= combinedWidthsInt /*&& canScroll*/ && !$(".image_links_flexed").is(':animated')){
                         
                             //make it so they cant induce scriolling until this is done
                             canScroll = false;
                             //scroll
-                            $(".image_links_flexed").animate({'margin-left' : '-=100px'}, 10, 'swing', canScrollAgain(canScroll));
+                            $(".image_links_flexed").animate({'margin-left' : '-='+screenWidth/2}, 500,
+                            'swing', $(".image_links_flexed").stop(true, true));
                          
                             
                         }
@@ -252,7 +274,9 @@ and open the template in the editor.
                 
                 });
                 
-                function canScrollAgain(canScroll){
+                function canScrollAgain(){
+                    
+                    console.log("we are inside the can scroll function call");
                     canScroll = true;
                     console.log("can scroll again");
                 }
