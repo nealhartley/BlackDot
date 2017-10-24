@@ -80,7 +80,7 @@ body{
     padding-bottom: 20%;
 }
 /*desktop*/
-@media screen and (min-width: 501px){
+@media screen and (min-width: 601px){
 
         .link_flex_item{
             min-width: calc(100%/8);
@@ -91,18 +91,27 @@ body{
         }
     }
     /* for phone*/ 
-@media screen and (max-width: 1024px){
-        
-        .link_flex_item{
-            min-width: 99%;
+@media screen and (max-width: 600px){
+    
+    .image_links_flexed{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    
+    
+    }
 
-            flex-grow: 1;
-            position: relative;
-            background-position: center;
-        }
+        
+    .link_flex_item{
+        min-width: 99%;
+
+        flex-grow: 1;
+        position: relative;
+        background-position: center;
+    }
              
         
-    }
+}
 
 .Black_overlay_flexItem{
     background-color: rgba(0,0,0,0);
@@ -141,31 +150,6 @@ header{
     pointer-events: none;
     
     padding-top: 14em;
-}
-
-.White_Transition{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding-bottom: 100%;
-        visibility: hidden;
-        opacity: 0;
-        background-color: white;
-        
-        transition: visiblity 0s 1s, opacity 1s linear;
-        -webkit-transition: visiblity 0s 1s, opacity 1s linear;
-        -moz-transition: visiblity 0s 1s, opacity 1s linear;
-}
-
-.transitioning{
-        visibility: visible;
-        opacity: 1;
-        z-index: 12;
-        
-        transition: visiblity 0s 2s, opacity 2s linear;
-        -webkit-transition: visiblity 0s 2s, opacity 2s linear;
-        -moz-transition: visiblity 0s 2s, opacity 2s linear;
 }
 
 /*Audio file pop up*/
