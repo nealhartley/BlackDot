@@ -25,34 +25,7 @@ and open the template in the editor.
         
  
         
-        <div class = "image_links_flexed">
-            <div class = "link_flex_item Kenyon_one ">
-            </div>
-        
-            <div class = "link_flex_item Kenyon_two ">
-                
-                <h3>Kenyon the Shank-Meister</h3>
-                
-                <h2>.</h2>
-                
-                <p>kenyonshankie@gmail.com</p>
-                
-                <p>Scroll to view my work ></p>
-                
-            </div>            
-
-            <div class = "Introduction">
-                <!--different image in each of these as background-->
-                <div class = "Black_overlay_flexItem" data-piece = "Introduction">
-                    <!--the black overlay inside the flex item that switches transparency on hover-->
-                    
-                </div>
-                <div class = "title_text">
-                        <h2>Hi!, I am Kenyon</h2>
-                        <P>I make music</P>
-                        <p class = "big_dot">.</p>
-                </div>
-            </div>            
+        <div class = "image_links_flexed"> <!--This is the container that wraps all the divs-->               
             
             <div class = "link_flex_item Gyro ">
                 <!--different image in each of these as background-->
@@ -63,7 +36,7 @@ and open the template in the editor.
                 <div class = "title_text">
                         <h2>GYRO</h2>
                         <P>video game score</P>
-                        <p class = "big_dot">.</p>
+                        
                 </div>
             </div>
 
@@ -76,7 +49,7 @@ and open the template in the editor.
                 <div class = "title_text">
                         <h2>ANXIETY</h2>
                         <P>depictions of mental illness</P>
-                        <p class = "big_dot">.</p>
+                        
                     </div>
             </div>
 
@@ -89,7 +62,7 @@ and open the template in the editor.
                 <div class = "title_text">
                         <h2>THE TENDER GRACE</h2>
                         <P>short film</P>
-                        <p class = "big_dot">.</p>
+                        
                     </div>
             </div>
 
@@ -102,7 +75,7 @@ and open the template in the editor.
                 <div class = "title_text">
                         <h2>OPAL HOUSE</h2>
                         <P>indie-pop</P>
-                        <p class = "big_dot">.</p>
+                        
                     </div>
             </div>
             
@@ -116,7 +89,7 @@ and open the template in the editor.
                 <div class = "title_text">
                         <h2>NO ROOM FOR SAINTS</h2>
                         <P>feature film</P>
-                        <p class = "big_dot">.</p>
+                        
                     </div>
             </div>
             
@@ -131,11 +104,39 @@ and open the template in the editor.
                 <div class = "title_text">
                         <h2>GGFF</h2>
                         <P>governor gary's fatal function</P>
-                        <p class = "big_dot">.</p>
+                       
                     </div>
             </div>
             
-        </div>
+            
+            <div class = "link_flex_item Minutes">
+                <!--different image in each of these as background-->
+                <div class = "Black_overlay_flexItem" data-piece = "1050_Minutes">
+                    <!--the black overlay inside the flex item that switches transparency on hover-->
+                    
+                </div>
+                <div class = "title_text">
+                        <h2>1050 MINUTES</h2>
+                        <P>Short Film</P>
+                        
+                </div>
+            </div>
+            
+            <div class = "link_flex_item Indelible">
+                <!--different image in each of these as background-->
+                <div class = "Black_overlay_flexItem" data-piece = "Indelible">
+                    <!--the black overlay inside the flex item that switches transparency on hover-->
+                    
+                </div>
+                <div class = "title_text">
+                        <h2>INDELIBLE</h2>
+                        <P>Short Film</P>
+                       
+                </div>
+            </div>
+        </div> <!-- end of big container -->
+        
+
         
         <div class = audio_bottom_bar>
             

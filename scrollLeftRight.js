@@ -30,14 +30,14 @@ $( window ).bind('mousewheel DOMMouseScroll' , function(event){
            marginLeftInt = parseInt(marginLeft);
 
            //make sure there is room left to scroll.
-           if(marginLeftInt + screenWidth/2 <= 0 /*&& canScroll*/&& !$(".image_links_flexed").is(':animated')){
+           if(marginLeftInt + screenWidth <= 0 /*&& canScroll*/&& !$(".image_links_flexed").is(':animated')){
                //make it so they cant induce scriolling until this is done
 
                console.log("canScroll current status: " + canScroll);
                canScroll = false;
                 console.log("canScroll should be false: " + canScroll);
                //scroll
-                $(".image_links_flexed").animate({'margin-left' : '+='+screenWidth/2}, 500,
+                $(".image_links_flexed").animate({'margin-left' : '+='+screenWidth}, 500,
                 'swing', $(".image_links_flexed").stop(true, true));
 
             }
@@ -74,7 +74,7 @@ $( window ).bind('mousewheel DOMMouseScroll' , function(event){
                 //make it so they cant induce scriolling until this is done
                 canScroll = false;
                 //scroll
-                $(".image_links_flexed").animate({'margin-left' : '-='+screenWidth/2}, 500,
+                $(".image_links_flexed").animate({'margin-left' : '-='+screenWidth}, 500,
                 'swing', $(".image_links_flexed").stop(true, true));
 
 
