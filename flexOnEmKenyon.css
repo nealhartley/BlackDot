@@ -22,6 +22,9 @@ Z-INDEXES
 
 html{
     background-color: rgb(0,0,0);
+    height: 100%;
+    overflow: hidden;
+    
 }
 
 body{
@@ -29,6 +32,7 @@ body{
     background-color: rgb(0,0,0); 
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.5em;
+    overflow: auto;
     
 }
 
@@ -77,6 +81,12 @@ body{
     width: 100%;
     padding-bottom: 20%;
 }
+
+.image_links_flexed{
+    position: fixed;
+    top: 0;
+}
+
 /*desktop*/
 @media screen and (min-width: 601px){
     

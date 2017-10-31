@@ -160,4 +160,9 @@ and open the template in the editor.
         <script src="audioChanger.js"></script>
        
     </body>
+    <script>
+    document.ontouchmove = function(event){
+        event.preventDefault();
+    };
+    </script>
 </html>
