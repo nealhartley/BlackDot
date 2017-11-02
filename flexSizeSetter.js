@@ -11,7 +11,7 @@
     if(window_width > 500){//ie desktop
 
         var height = $(".link_flex_item").width();
-        $(".link_flex_item").height(height);
+        $(".link_flex_item").height(window_height);
 
     }
 
@@ -31,7 +31,7 @@
         if(window_width > 600){//ie desktop
 
             height = $(".link_flex_item").width();
-            $(".link_flex_item").height(height);
+            $(".link_flex_item").height(window_height);
                 
         }
 

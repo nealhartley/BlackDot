@@ -12,12 +12,7 @@ and open the template in the editor.
         <link type="text/css" rel="stylesheet" href="flexOnEmKenyon.css">
         <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet"> 
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        
-        
-        
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
         
         <title></title>
     </head>
